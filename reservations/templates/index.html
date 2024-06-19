@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/style-page.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+{% endblock %}
+
+{% block title %}
+Hotel Reservations
+{% endblock %}
+
+{% block content %}
+<section class="hero text-center py-5 bg-light">
+    <div class="container">
+        <h1 class="display-4">Welcome to Our Hotel</h1>
+        <p class="lead">Discover the best rooms and services for your stay.</p>
+        <a href="{% url 'room_list' %}" class="btn btn-primary btn-lg mt-3">View Rooms</a>
+    </div>
+</section>
+
+<section class="features py-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="feature-icon bg-primary text-white rounded-circle mb-3">
+                    <i class="bi bi-house-door-fill"></i>
+                </div>
+                <h3>Luxurious Rooms</h3>
+                <p>Experience the comfort and elegance of our well-appointed rooms.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-icon bg-primary text-white rounded-circle mb-3">
+                    <i class="bi bi-concierge-bell-fill"></i>
+                </div>
+                <h3>Top-notch Services</h3>
+                <p>Enjoy our world-class services designed to cater to your needs.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-icon bg-primary text-white rounded-circle mb-3">
+                    <i class="bi bi-globe"></i>
+                </div>
+                <h3>Prime Locations</h3>
+                <p>Stay in the heart of the city with easy access to major attractions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Gallery</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{% static 'room_images/1_1920x1080.jpg' %}" alt="Room 1" class="img-fluid mb-3">
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'room_images/1_1920x1080.jpg' %}" alt="Room 2" class="img-fluid mb-3">
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'room_images/1_1920x1080.jpg' %}" alt="Room 3" class="img-fluid mb-3">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <form>
+                    <div class="form-group mb-3">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

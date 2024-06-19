@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }} - Hotel Reservations
+{% endblock %}
+
+{% block content %}
+<section class="admin-dashboard">
+    <div class="container">
+        <h1 class="display-4">Admin Dashboard</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Rooms</h5>
+                        <p class="card-text">{{ total_rooms }}</p>
+                        <a href="{% url 'room_list' %}" class="btn btn-primary">View Rooms</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Reservations</h5>
+                        <p class="card-text">{{ total_reservations }}</p>
+                        <a href="{% url 'reservation_list' %}" class="btn btn-primary">View Reservations</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Otros elementos del dashboard como estadísticas adicionales, formularios, etc. -->
+    </div>
+</section>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
