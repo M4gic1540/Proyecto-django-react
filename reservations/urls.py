@@ -21,6 +21,7 @@ urlpatterns = [
 
 
     # Nuevas rutas para editar y eliminar habitaciones
+    path('rooms/', views.admin_room_list, name='room_list'),
     path('rooms/', views.room_list, name='room_list'),
     path('rooms/create/', views.create_room, name='create_room'),
     path('rooms/edit/<int:room_id>/', views.edit_room, name='edit_room'),

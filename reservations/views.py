@@ -42,7 +42,7 @@ def reservation_list(request):
 
 def make_reservation(request, room_id):
     if request.method == 'POST':
-        room = Room.objects.get(id=room_id)
+        room = Room.get_object_or_404(id=room_id)
         check_in = request.POST['check_in']
         check_out = request.POST['check_out']
         reservation = Reservation(user=request.user, room=room, check_in=check_in, check_out=check_out)
@@ -88,3 +88,7 @@ def delete_room(request, room_id):
 
 def profile(request):
     return render(request, 'accounts/profile.html')
+
+def admin_room_list(request):
+    rooms = Room.objects.all()
+    return render(request, 'reservations/room_list.html', {'rooms': rooms})
